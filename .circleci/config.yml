@@ -10,4 +10,4 @@ jobs:
       - run:
           name: Build docker image
           command: |
-            docker build -t black3r/gcloud-docker-builder:$CIRCLE_SHA1
+            docker build -t black3r/gcloud-docker-builder:$CIRCLE_SHA1 .
