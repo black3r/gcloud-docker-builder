@@ -11,3 +11,8 @@ jobs:
           name: Build docker image
           command: |
             docker build -t black3r/gcloud-docker-builder:$CIRCLE_SHA1 .
+      - run:
+          name: Push docker image to dockerhub
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push black3r/gcloud-docker-builder:$CIRCLE_SHA1
