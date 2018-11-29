@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: docker:latest
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+        name: Build docker image
+        command: |
+          docker build -t black3r/gcloud-docker-builder:$CIRCLE_SHA1
